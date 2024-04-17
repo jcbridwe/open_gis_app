@@ -1,0 +1,27 @@
+{
+  "name": "web-mapping-application",
+  "version": "1.0.0",
+  "description": "A web mapping application using openlayers and node",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html",
+    "build": "parcel build --public-url . index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcbridwe/open_gis_app.git"
+  },
+  "author": "Justin Bridwell",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcbridwe/open_gis_app/issues"
+  },
+  "homepage": "https://github.com/jcbridwe/open_gis_app#readme",
+  "dependencies": {
+    "ol": "^9.1.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  }
+}
