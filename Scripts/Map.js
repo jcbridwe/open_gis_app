@@ -22,7 +22,8 @@ const orthophotoSource = new TileWMS({
 });
 
 const orthophotoLayer = new TileLayer({
-    source: orthophotoSource
+    source: orthophotoSource,
+    name: 'Orthophoto'
 });
 
 const parcelsSource = new ImageWMS({
@@ -31,7 +32,8 @@ const parcelsSource = new ImageWMS({
 });
 
 const parcelsLayer = new ImageLayer({
-    source: parcelsSource
+    source: parcelsSource,
+    name: 'Parcels'
 });
 
 const buildingsSource = new ImageWMS({
@@ -40,7 +42,8 @@ const buildingsSource = new ImageWMS({
 });
 
 const buildingsLayer = new ImageLayer({
-    source: buildingsSource
+    source: buildingsSource,
+    name: 'Buildings'
 });
 
 const view = new View({
@@ -55,3 +58,5 @@ const map = new Map({
     layers: [orthophotoLayer, parcelsLayer, buildingsLayer],
     view: view
 });
+
+$('#map').data('map', map);
