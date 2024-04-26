@@ -1,3 +1,41 @@
+import { getLayerByName } from "./customFunctions";
+
+const map = $('#map').data('map');
+const layers = map.getLayers();
+const closer = $('#draggable-closer');
+
+$('#layers').click(function() {
+  const layersDiv = $('#draggable');
+  const layersDivTitle = $('#draggable-title');
+  const layersDivContent = $('#draggable-content');
+  layersDivTitle.html('Layers');
+  layersDivContent.html('');
+  layersDiv.css('display', 'block');
+
+  layers.forEach(layer => {
+    const element = `<div class="mb-3 form-check">
+      <input type="checkbox" class="form-check-input" id=${layer.get('name')}>
+      <label class="form-check-label" for="exampleCheck1">${layer.get('name')}</label>
+    </div>`;
+    layersDivContent.append(element);
+    $(`#${layer.get('name')}`).prop('checked', layer.getVisible());
+  });
+
+$('.form-check-input').change(function() {
+  const checkbox=this;
+  const layerName = checkbox.id;
+  const layer = getLayerByName(layerName);
+  layer.setVisible(checkbox.checked);
+  
+
+});
+
+});
+
+closer.click(function() {
+  $('#draggable').css('display', 'none');
+});
+
 // Make the DIV element draggable:
 dragElement(document.getElementById("draggable"));
 

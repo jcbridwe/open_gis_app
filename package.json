@@ -22,6 +22,8 @@
     "ol": "^9.1.0"
   },
   "devDependencies": {
-    "parcel-bundler": "^1.12.5"
+    "parcel-bundler": "^1.12.5",
+    "vite": "^3.2.3"
   }
+  
 }
